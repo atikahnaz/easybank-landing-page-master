@@ -9,6 +9,8 @@ export default {
     extend: {
       fontSize: {
         "5xl": "2.5rem",
+        xxs: "0.7rem",
+        customsm: "0.8rem",
       },
       colors: {
         "Dark-Blue": "hsl(233, 26%, 24%)",

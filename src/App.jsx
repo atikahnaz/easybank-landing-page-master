@@ -23,7 +23,7 @@ function Navbar() {
 
 function HeaderPage() {
   return (
-    <header className="w-screen relative bg-Light-Grayish-Blue">
+    <header className="w-screen relative bg-Very-Light-Gray">
       <img
         className="max-w-full h-auto "
         src="/images/bg-intro-mobile.svg"
@@ -35,15 +35,15 @@ function HeaderPage() {
         alt="mockup"
       />
       <div className="px-4">
-        <h1 className="font-customSans text-center text-5xl">
+        <h1 className="font-customSans text-center text-5xl leading-10 py-7">
           Next generation digital banking
         </h1>
-        <p className="font-customSans text-center text-base">
+        <p className="font-customSans text-center text-base pb-7">
           Take your financial life online. Your Easybank account will be a
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
         </p>
-        <div className="flex justify-center">
+        <div className="flex justify-center pb-20">
           <button
             type="button"
             className="bg-Lime-Green px-7 py-2 rounded-3xl text-base"
@@ -58,47 +58,140 @@ function HeaderPage() {
 
 function SectionPage() {
   return (
-    <section>
+    <section className=" bg-Light-Grayish-Blue py-16 font-customSans">
       <div>
-        <h1>Why choose Easybank?</h1>
-        <p>
+        <h1 className=" text-3xl text-center px-9 pb-5 text-Dark-Blue">
+          Why choose Easybank?
+        </h1>
+        <p className="text-base text-center px-2 pb-5 text-Grayish-Blue">
           We leverage Open Banking to turn your bank account into your financial
           hub. Control your finances like never before.
         </p>
       </div>
-      <div>
-        <img src="/images/icon-online.svg" alt="online" />
-        <h3>Online Banking</h3>
-        <p>
+      <div className="flex flex-col items-center pt-10">
+        <img
+          className=" max-w-min"
+          src="/images/icon-online.svg"
+          alt="online"
+        />
+        <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
+          Online Banking
+        </h3>
+        <p className="text-base text-center px-2 pt-5 text-Grayish-Blue">
           Our modern web and mobile applications allow you to keep track of your
           finances wherever you are in the world.
         </p>
       </div>
-      <div>
+      <div className="flex flex-col items-center pt-10">
         <img src="/images/icon-budgeting.svg" alt="budget" />
-        <h3>Simple Budgeting</h3>
-        <p>
+        <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
+          Simple Budgeting
+        </h3>
+        <p className="text-base text-center px-2 pt-5 text-Grayish-Blue">
           See exactly where your money goes each month. Receive notifications
           when you’re close to hitting your limits.
         </p>
       </div>
-      <div>
+      <div className="flex flex-col items-center pt-10">
         <img src="/images/icon-onboarding.svg" alt="onboarding" />
-        <h3>Fast Onboarding</h3>
-        <p>
+        <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
+          Fast Onboarding
+        </h3>
+        <p className="text-base text-center px-2 pt-5 text-Grayish-Blue">
           We don’t do branches. Open your account in minutes online and start
           taking control of your finances right away.
         </p>
       </div>
-      <div>
+      <div className="flex flex-col items-center pt-10">
         <img src="/images/icon-api.svg" alt="api" />
-        <h3>Open API</h3>
-        <p>
+        <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
+          Open API
+        </h3>
+        <p className="text-base text-center px-2 pt-5 text-Grayish-Blue">
           Manage your savings, investments, pension, and much more from one
           account. Tracking your money has never been easier.
         </p>
       </div>
     </section>
+  );
+}
+
+function Article() {
+  return (
+    <article className="px-5 py-16 font-customSans bg-Very-Light-Gray">
+      <h1 className=" text-center text-4xl text-Dark-Blue pb-5">
+        Latest Articles
+      </h1>
+      <div className="mb-5  bg-white rounded-lg">
+        <img
+          className="rounded-t-lg w-full"
+          src="/images/image-currency.jpg"
+          alt="articles"
+        />
+        <div className=" px-8 py-10">
+          <p className="text-xxs text-Grayish-Blue pb-3">By Claire Robinson</p>
+          <h5 className=" text-Dark-Blue text-base leading-5 pb-3">
+            Receive money in any currency with no fees
+          </h5>
+          <p className=" text-Grayish-Blue text-customsm">
+            The world is getting smaller and we’re becoming more mobile. So why
+            should you be forced to only receive money in a single …
+          </p>
+        </div>
+      </div>
+      <div className="mb-5  bg-white rounded-lg">
+        <img
+          className="rounded-t-lg"
+          src="/images/image-restaurant.jpg"
+          alt="articles"
+        />
+
+        <div className=" px-8 py-10">
+          <p className="text-xxs text-Grayish-Blue pb-3">By Wilson Hutton</p>
+          <h5 className=" text-Dark-Blue text-base leading-5 pb-3">
+            Treat yourself without worrying about money
+          </h5>
+          <p className=" text-Grayish-Blue text-customsm">
+            Our simple budgeting feature allows you to separate out your
+            spending and set realistic limits each month. That means you …
+          </p>
+        </div>
+      </div>
+      <div className="mb-5  bg-white rounded-lg">
+        <img
+          className="rounded-t-lg"
+          src="/images/image-plane.jpg"
+          alt="articles"
+        />
+        <div className=" px-8 py-10">
+          <p className="text-xxs text-Grayish-Blue pb-3">By Wilson Hutton</p>
+          <h5 className=" text-Dark-Blue text-base leading-5 pb-3">
+            Take your Easybank card wherever you go
+          </h5>
+          <p className=" text-Grayish-Blue text-customsm">
+            We want you to enjoy your travels. This is why we don’t charge any
+            fees on purchases while you’re abroad. We’ll even show you …
+          </p>
+        </div>
+      </div>
+      <div className="mb-5  bg-white rounded-lg">
+        <img
+          className="rounded-t-lg"
+          src="/images/image-confetti.jpg"
+          alt="articles"
+        />
+        <div className=" px-8 py-10">
+          <p className="text-xxs text-Grayish-Blue pb-3">By Claire Robinson</p>
+          <h5 className=" text-Dark-Blue text-base leading-5 pb-3">
+            Our invite-only Beta accounts are now live!
+          </h5>
+          <p className=" text-Grayish-Blue text-customsm">
+            After a lot of hard work by the whole team, we’re excited to launch
+            our closed beta. It’s easy to request an invite through the site ...
+          </p>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -108,50 +201,8 @@ function App() {
       <Navbar />
       <HeaderPage />
       <SectionPage />
-
-      <article>
-        <h1>Latest Articles</h1>
-        <div>
-          <img
-            src="/images/image-currency.jpg"
-            alt="articles</h1>
-        <div>"
-          />
-          <p>By Claire Robinson</p>
-          <h5>Receive money in any currency with no fees</h5>
-          <p>
-            The world is getting smaller and we’re becoming more mobile. So why
-            should you be forced to only receive money in a single …
-          </p>
-        </div>
-        <div>
-          <img src="/images/image-restaurant.jpg" alt="articles" />
-          <p>By Wilson Hutton</p>
-          <h5>Treat yourself without worrying about money</h5>
-          <p>
-            Our simple budgeting feature allows you to separate out your
-            spending and set realistic limits each month. That means you …
-          </p>
-        </div>
-        <div>
-          <img src="/images/image-plane.jpg" alt="articles" />
-          <p>By Wilson Hutton</p>
-          <h5>Take your Easybank card wherever you go</h5>
-          <p>
-            We want you to enjoy your travels. This is why we don’t charge any
-            fees on purchases while you’re abroad. We’ll even show you …
-          </p>
-        </div>
-        <div>
-          <img src="/images/image-confetti.jpg" alt="articles" />
-          <p>By Claire Robinson</p>
-          <h5>Our invite-only Beta accounts are now live!</h5>
-          <p>
-            After a lot of hard work by the whole team, we’re excited to launch
-            our closed beta. It’s easy to request an invite through the site ...
-          </p>
-        </div>
-      </article>
+      <Article />
+      {/* 
       <footer>
         <img src="/images/logo.svg" alt="" />
         <div>
@@ -185,7 +236,7 @@ function App() {
         </div>
         <button>Request Invite</button>
         <p>© Easybank. All Rights Reserved</p>
-      </footer>
+      </footer>*/}
 
       {/*<div className="attribution">
           Challenge by{" "}
