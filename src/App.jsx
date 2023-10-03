@@ -2,21 +2,36 @@ import "./App.css";
 
 function Navbar() {
   return (
-    <nav className="w-full flex">
+    <nav className="w-full bg-white fixed z-10 p-5 flex items-center  md:justify-between">
       <img src="/images/logo.svg" alt="logo" />
-      {/*<div className=" invisible lg:visible">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Blog</a>
-        <a href="#">Careers</a>
-        <a href="#">Request Invite</a>
-      </div>
+      <ul className="hidden md:flex  ">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li className="pl-2">
+          <a href="#">About</a>
+        </li>
+        <li className="pl-2">
+          <a href="#">Contact</a>
+        </li>
+        <li className="pl-2">
+          <a href="#">Blog</a>
+        </li>
+        <li className="pl-2">
+          <a href="#">Careers</a>
+        </li>
+      </ul>
+      <button
+        type="button"
+        className="hidden md:flex bg-Lime-Green px-7 py-2 rounded-3xl text-base font-bold text-White"
+      >
+        Request Invite
+      </button>
       <img
-        className="invisible"
+        className="absolute right-5 md:hidden"
         src="/images/icon-hamburger.svg"
         alt="hamburger"
-  />*/}
+      />
     </nav>
   );
 }
@@ -25,20 +40,20 @@ function HeaderPage() {
   return (
     <header className="w-screen relative bg-Very-Light-Gray">
       <img
-        className="max-w-full h-auto "
+        className="w-full h-auto relative"
         src="/images/bg-intro-mobile.svg"
         alt="header"
       />
       <img
-        className="invisible w-full absolute top-0"
+        className="max-w-full absolute top-[-4rem] px-3"
         src="/images/image-mockups.png"
         alt="mockup"
       />
       <div className="px-4">
-        <h1 className="font-customSans text-center text-5xl leading-10 py-7">
+        <h1 className="relative -top-8 font-customSans text-center text-5xl leading-10 text-Dark-Blue">
           Next generation digital banking
         </h1>
-        <p className="font-customSans text-center text-base pb-7">
+        <p className="font-customSans text-center text-base pb-7  text-Grayish-Blue">
           Take your financial life online. Your Easybank account will be a
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
@@ -46,7 +61,7 @@ function HeaderPage() {
         <div className="flex justify-center pb-20">
           <button
             type="button"
-            className="bg-Lime-Green px-7 py-2 rounded-3xl text-base"
+            className="bg-Lime-Green px-7 py-3 rounded-3xl text-base font-bold text-White"
           >
             Request Invite
           </button>
@@ -141,7 +156,7 @@ function Article() {
       </div>
       <div className="mb-5  bg-white rounded-lg">
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg w-full"
           src="/images/image-restaurant.jpg"
           alt="articles"
         />
@@ -159,7 +174,7 @@ function Article() {
       </div>
       <div className="mb-5  bg-white rounded-lg">
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg w-full"
           src="/images/image-plane.jpg"
           alt="articles"
         />
@@ -176,7 +191,7 @@ function Article() {
       </div>
       <div className="mb-5  bg-white rounded-lg">
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg w-full"
           src="/images/image-confetti.jpg"
           alt="articles"
         />
@@ -195,6 +210,52 @@ function Article() {
   );
 }
 
+function Footer() {
+  return (
+    <footer className=" font-customSans bg-Dark-Blue flex flex-col items-center text-White py-10">
+      <img className="" src="public/images/logo-footer.svg" alt="" />
+      <div className="flex py-7 w-full justify-center gap-x-5">
+        <img src="/images/icon-facebook.svg" alt="" />
+        <img src="/images/icon-youtube.svg" alt="" />
+        <img src="/images/icon-twitter.svg" alt="" />
+        <img src="/images/icon-pinterest.svg" alt="" />
+        <img src="/images/icon-instagram.svg" alt="" />
+      </div>
+      <div className="text-center font-light">
+        <ul>
+          <li className="py-2">
+            <a href="">About Us</a>
+          </li>
+          <li className="py-2">
+            <a href="">Contact</a>
+          </li>
+          <li className="py-2">
+            <a href="">Blog</a>
+          </li>
+          <li className="py-2">
+            <a href="">Careers</a>
+          </li>
+          <li className="py-2">
+            <a href="">Support</a>
+          </li>
+          <li className="py-2">
+            <a href="">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+      <button
+        type="button"
+        className=" bg-Lime-Green my-8 px-10 py-3 rounded-full font-bold"
+      >
+        Request Invite
+      </button>
+      <p className=" text-Light-Grayish-Blue">
+        © Easybank. All Rights Reserved
+      </p>
+    </footer>
+  );
+}
+
 function App() {
   return (
     <>
@@ -202,41 +263,9 @@ function App() {
       <HeaderPage />
       <SectionPage />
       <Article />
-      {/* 
-      <footer>
-        <img src="/images/logo.svg" alt="" />
-        <div>
-          <img src="/images/icon-facebook.svg" alt="" />
-          <img src="/images/icon-youtube.svg" alt="" />
-          <img src="/images/icon-twitter.svg" alt="" />
-          <img src="/images/icon-pinterest.svg" alt="" />
-          <img src="/images/icon-instagram.svg" alt="" />
-        </div>
-        <div>
-          <ul>
-            <li>
-              <a href="">About Us</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
-            <li>
-              <a href="">Blog</a>
-            </li>
-            <li>
-              <a href="">Careers</a>
-            </li>
-            <li>
-              <a href="">Support</a>
-            </li>
-            <li>
-              <a href="">Privacy Policy</a>
-            </li>
-          </ul>
-        </div>
-        <button>Request Invite</button>
-        <p>© Easybank. All Rights Reserved</p>
-      </footer>*/}
+      <Footer />
+
+      {/**/}
 
       {/*<div className="attribution">
           Challenge by{" "}
