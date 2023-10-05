@@ -1,12 +1,13 @@
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
+import { useEffect } from "react";
+
 import "./App.css";
 
 function MenuHamburger() {
   return (
-    <div className="flex items-start justify-center absolute w-full z-20 top-10  ">
-      <ul className="w-3/4 h-1/2 z-20 flex flex-col items-center justify-evenly bg-slate-300">
-        <li className="pl-2 pt-8 pb-3">
+    <div className="flex items-start justify-center absolute w-full z-20 top-20 md:top-0 md:z-50 md:relative md:w-1/2 md:text-lg">
+      <ul className=" font-customSans text-Grayish-Blue w-3/4 h-1/2 z-20 flex flex-col items-center justify-evenly bg-slate-600  md:flex-row md:bg-transparent">
+        <li className="pl-2 pt-8 pb-3 md:py-0">
           <a href="#">Home</a>
         </li>
         <li className="pl-2 py-3">
@@ -18,7 +19,7 @@ function MenuHamburger() {
         <li className="pl-2 py-3">
           <a href="#">Blog</a>
         </li>
-        <li className="pl-2 py-3">
+        <li className="pl-2 py-3 mb-5 md:py-0 md:m-0">
           <a href="#">Careers</a>
         </li>
       </ul>
@@ -28,25 +29,39 @@ function MenuHamburger() {
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isMediumScreen, setMediumScreen] = useState(false);
 
   function HamburgerClick() {
     setShowMenu(!showMenu);
   }
-  const changeBackground = () => {
-    const rootElement = document.getElementById("root");
-    if (rootElement) {
-      rootElement.style.backgroundColor = "red";
+
+  // Function to check the screen size and update the state accordingly
+  function checkScreenSize() {
+    if (window.innerWidth >= 768) {
+      setShowMenu(true); // Close the menu on medium screens
+    } else {
+      setShowMenu(false);
     }
-  };
+  }
+  // Use useEffect to add a listener for screen size changes
+  useEffect(() => {
+    checkScreenSize(); // Check screen size on initial render
+    window.addEventListener("resize", checkScreenSize); // Add a listener for resize events
+
+    return () => {
+      // Cleanup: remove the resize listener when the component unmounts
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   return (
     <>
-      <nav className="w-screen bg-white fixed z-50 p-5 flex items-center justify-between">
+      <nav className="w-screen bg-white fixed z-50 p-5 flex items-center justify-between lg:px-28">
         <img src="/images/logo.svg" alt="logo" />
-
+        {showMenu && <MenuHamburger />}
         <button
           type="button"
-          className="hidden lg:flex bg-Lime-Green px-7 py-2 rounded-3xl text-base font-bold text-White"
+          className="hidden md:flex bg-Lime-Green px-7 py-2 rounded-3xl text-base font-bold text-White"
         >
           Request Invite
         </button>
@@ -57,14 +72,13 @@ function Navbar() {
           onClick={HamburgerClick}
         />
       </nav>
-      {showMenu && <MenuHamburger />}
     </>
   );
 }
 
 function HeaderPage() {
   return (
-    <header className="w-full flex flex-col items-center bg-Very-Light-Gray lg:relative lg:flex-row-reverse lg:top-20">
+    <header className="w-full flex flex-col items-center bg-Very-Light-Gray lg:relative lg:flex-row-reverse lg:top-20 overflow-x-clip">
       <img
         className="w-full h-auto relative lg:hidden"
         src="/images/bg-intro-mobile.svg"
@@ -83,16 +97,17 @@ function HeaderPage() {
         src="/images/image-mockups.png"
         alt="mockup"
       />
-      <div className="px-4 lg:pl-16 lg:w-1/2">
-        <h1 className="relative -top-8 font-customSans text-center text-5xl leading-10 text-Dark-Blue">
+
+      <div className="px-4 lg:pl-16 xl:pl-28 lg:w-2/3 ">
+        <h1 className="relative -top-8 font-customSans text-center text-5xl leading-10 text-Dark-Blue xl:text-6xl lg:text-left">
           Next generation digital banking
         </h1>
-        <p className="font-customSans text-center text-base pb-7  text-Grayish-Blue">
+        <p className="font-customSans text-center text-base pb-7  text-Grayish-Blue lg:text-xl lg:text-left">
           Take your financial life online. Your Easybank account will be a
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
         </p>
-        <div className="flex justify-center pb-20">
+        <div className="flex justify-center pb-20 lg:justify-start">
           <button
             type="button"
             className="bg-Lime-Green px-7 py-3 rounded-3xl text-base font-bold text-White"
@@ -107,7 +122,7 @@ function HeaderPage() {
 
 function SectionPage() {
   return (
-    <section className=" bg-Light-Grayish-Blue py-16 font-customSans lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:relative lg:top-8 lg:z-20 lg:px-20">
+    <section className=" bg-Light-Grayish-Blue py-16 font-customSans lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:relative lg:top-8 lg:z-20 lg:px-28">
       <div className="lg:col-span-4 lg:top-40 lg:w-1/2 lg:mt-12 lg:h-1/6">
         <h1 className=" text-3xl text-center px-9 pb-5 text-Dark-Blue lg:text-left lg:px-0 lg:m-0 lg:text-5xl">
           Why choose Easybank?
@@ -118,7 +133,7 @@ function SectionPage() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center pt-10 lg:items-start">
+      <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
         <img
           className=" max-w-min"
           src="/images/icon-online.svg"
@@ -132,7 +147,7 @@ function SectionPage() {
           finances wherever you are in the world.
         </p>
       </div>
-      <div className="flex flex-col items-center pt-10 lg:items-start">
+      <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
         <img src="/images/icon-budgeting.svg" alt="budget" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Simple Budgeting
@@ -142,7 +157,7 @@ function SectionPage() {
           when you’re close to hitting your limits.
         </p>
       </div>
-      <div className="flex flex-col items-center pt-10 lg:items-start">
+      <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
         <img src="/images/icon-onboarding.svg" alt="onboarding" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Fast Onboarding
@@ -152,7 +167,7 @@ function SectionPage() {
           taking control of your finances right away.
         </p>
       </div>
-      <div className="flex flex-col items-center pt-10 lg:items-start">
+      <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
         <img src="/images/icon-api.svg" alt="api" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Open API
@@ -168,13 +183,13 @@ function SectionPage() {
 
 function Article() {
   return (
-    <article className="px-5 py-16 font-customSans bg-Very-Light-Gray">
-      <h1 className=" text-center text-4xl text-Dark-Blue pb-5">
+    <article className="px-5 py-16 font-customSans bg-Very-Light-Gray lg:grid lg:grid-cols-4 lg:grid-rows-[1fr,4fr] lg:px-28 lg:gap-6">
+      <h1 className=" text-center text-4xl text-Dark-Blue pb-5 lg:col-span-4 lg:text-left lg:my-auto lg:text-5xl">
         Latest Articles
       </h1>
-      <div className="mb-5  bg-white rounded-lg">
+      <div className="mb-5  bg-white rounded-lg ">
         <img
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-full lg:h-auto"
           src="/images/image-currency.jpg"
           alt="articles"
         />
@@ -247,17 +262,24 @@ function Article() {
 
 function Footer() {
   return (
-    <footer className=" font-customSans bg-Dark-Blue flex flex-col items-center text-White py-10">
-      <img className="" src="public/images/logo-footer.svg" alt="" />
-      <div className="flex py-7 w-full justify-center gap-x-5">
+    <footer
+      className=" font-customSans bg-Dark-Blue flex flex-col items-center text-White py-10
+    lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:px-28"
+    >
+      <img
+        className=" lg:order-first"
+        src="public/images/logo-footer.svg"
+        alt=""
+      />
+      <div className="flex py-7 w-full justify-center gap-x-5 lg:order-2 lg:justify-start">
         <img src="/images/icon-facebook.svg" alt="" />
         <img src="/images/icon-youtube.svg" alt="" />
         <img src="/images/icon-twitter.svg" alt="" />
         <img src="/images/icon-pinterest.svg" alt="" />
         <img src="/images/icon-instagram.svg" alt="" />
       </div>
-      <div className="text-center font-light">
-        <ul>
+      <div className="text-center font-light lg:row-span-2 ">
+        <ul className="lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:text-left">
           <li className="py-2">
             <a href="">About Us</a>
           </li>
@@ -280,11 +302,11 @@ function Footer() {
       </div>
       <button
         type="button"
-        className=" bg-Lime-Green my-8 px-10 py-3 rounded-full font-bold"
+        className=" bg-Lime-Green my-8 px-10 py-3 rounded-full font-bold lg:m-0 lg:w-fit lg:justify-self-end"
       >
         Request Invite
       </button>
-      <p className=" text-Light-Grayish-Blue">
+      <p className=" text-Light-Grayish-Blue lg:order-last lg:justify-self-end">
         © Easybank. All Rights Reserved
       </p>
     </footer>
