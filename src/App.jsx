@@ -67,7 +67,7 @@ function Navbar() {
         </button>
         <img
           className="absolute right-5 md:hidden"
-          src="/images/icon-hamburger.svg"
+          src="./images/icon-hamburger.svg"
           alt="hamburger"
           onClick={HamburgerClick}
         />
