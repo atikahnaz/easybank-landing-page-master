@@ -94,7 +94,7 @@ function HeaderPage() {
 
       <img
         className="max-w-full absolute top-[-4rem] px-3 lg:-right-36 lg:z-40"
-        src="/public/images/image-mockups.png"
+        src="public/images/image-mockups.png"
         alt="mockup"
       />
 
