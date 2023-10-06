@@ -242,7 +242,7 @@ function Article() {
       <div className="mb-5  bg-white rounded-lg">
         <img
           className="rounded-t-lg w-full"
-          src="/images/image-confetti.jpg"
+          src="./images/image-confetti.jpg"
           alt="articles"
         />
         <div className=" px-8 py-10">
@@ -266,7 +266,7 @@ function Footer() {
       className=" font-customSans bg-Dark-Blue flex flex-col items-center text-White py-10
     lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:px-28"
     >
-      <img className=" lg:order-first" src="/images/logo-footer.svg" alt="" />
+      <img className=" lg:order-first" src="./images/logo-footer.svg" alt="" />
       <div className="flex py-7 w-full justify-center gap-x-5 lg:order-2 lg:justify-start">
         <img src="./images/icon-facebook.svg" alt="" />
         <img src="./images/icon-youtube.svg" alt="" />
