@@ -87,7 +87,7 @@ function HeaderPage() {
       <div className="overflow-x-hidden">
         <img
           className="hidden  lg:flex relative max-w-full -top-32 -right-32"
-          src="/bg-intro-desktop.svg"
+          src="./bg-intro-desktop.svg"
           alt="header"
         />
       </div>
