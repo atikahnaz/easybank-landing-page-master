@@ -57,7 +57,7 @@ function Navbar() {
   return (
     <>
       <nav className="w-screen bg-white fixed z-50 p-5 flex items-center justify-between lg:px-28">
-        <img src="/images/logo.svg" alt="logo" />
+        <img src="./images/logo.svg" alt="logo" />
         {showMenu && <MenuHamburger />}
         <button
           type="button"
@@ -94,7 +94,7 @@ function HeaderPage() {
 
       <img
         className="max-w-full absolute top-[-4rem] px-3 lg:-right-36 lg:z-40"
-        src="../public/images/image-mockups.png"
+        src="./images/image-mockups.png"
         alt="mockup"
       />
 
@@ -136,7 +136,7 @@ function SectionPage() {
       <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
         <img
           className=" max-w-min"
-          src="/images/icon-online.svg"
+          src="./images/icon-online.svg"
           alt="online"
         />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue lg:text-left">
@@ -148,7 +148,7 @@ function SectionPage() {
         </p>
       </div>
       <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
-        <img src="/images/icon-budgeting.svg" alt="budget" />
+        <img src="./images/icon-budgeting.svg" alt="budget" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Simple Budgeting
         </h3>
@@ -158,7 +158,7 @@ function SectionPage() {
         </p>
       </div>
       <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
-        <img src="/images/icon-onboarding.svg" alt="onboarding" />
+        <img src="./images/icon-onboarding.svg" alt="onboarding" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Fast Onboarding
         </h3>
@@ -168,7 +168,7 @@ function SectionPage() {
         </p>
       </div>
       <div className="flex flex-col items-center pt-10 lg:items-start lg:pt-0">
-        <img src="/images/icon-api.svg" alt="api" />
+        <img src="./images/icon-api.svg" alt="api" />
         <h3 className="text-xl text-center px-2 pt-5 text-Dark-Blue">
           Open API
         </h3>
@@ -190,7 +190,7 @@ function Article() {
       <div className="mb-5  bg-white rounded-lg ">
         <img
           className="rounded-t-lg w-full lg:h-auto"
-          src="/images/image-currency.jpg"
+          src="./images/image-currency.jpg"
           alt="articles"
         />
         <div className=" px-8 py-10">
@@ -207,7 +207,7 @@ function Article() {
       <div className="mb-5  bg-white rounded-lg">
         <img
           className="rounded-t-lg w-full"
-          src="/images/image-restaurant.jpg"
+          src="./images/image-restaurant.jpg"
           alt="articles"
         />
 
@@ -225,7 +225,7 @@ function Article() {
       <div className="mb-5  bg-white rounded-lg">
         <img
           className="rounded-t-lg w-full"
-          src="/images/image-plane.jpg"
+          src="./images/image-plane.jpg"
           alt="articles"
         />
         <div className=" px-8 py-10">
@@ -268,11 +268,11 @@ function Footer() {
     >
       <img className=" lg:order-first" src="/images/logo-footer.svg" alt="" />
       <div className="flex py-7 w-full justify-center gap-x-5 lg:order-2 lg:justify-start">
-        <img src="/images/icon-facebook.svg" alt="" />
-        <img src="/images/icon-youtube.svg" alt="" />
-        <img src="/images/icon-twitter.svg" alt="" />
-        <img src="/images/icon-pinterest.svg" alt="" />
-        <img src="/images/icon-instagram.svg" alt="" />
+        <img src="./images/icon-facebook.svg" alt="" />
+        <img src="./images/icon-youtube.svg" alt="" />
+        <img src="./images/icon-twitter.svg" alt="" />
+        <img src="./images/icon-pinterest.svg" alt="" />
+        <img src="./images/icon-instagram.svg" alt="" />
       </div>
       <div className="text-center font-light lg:row-span-2 ">
         <ul className="lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:text-left">
