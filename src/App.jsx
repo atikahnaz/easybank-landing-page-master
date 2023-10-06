@@ -81,7 +81,7 @@ function HeaderPage() {
     <header className="w-full flex flex-col items-center bg-Very-Light-Gray lg:relative lg:flex-row-reverse lg:top-20 overflow-x-clip">
       <img
         className="w-full h-auto relative lg:hidden"
-        src="/images/bg-intro-mobile.svg"
+        src="./images/bg-intro-mobile.svg"
         alt="header"
       />
       <div className="overflow-x-hidden">
